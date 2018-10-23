@@ -18,22 +18,20 @@ layout: default
             <span class="octicon octicon-file-directory"></span>
             <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
           </span>
-                                        {% if forloop.first %}
-
-
-
-                            <span id="busuanzi_container_page_pv" style="float: right">
-                                <i class="octicon octicon-eye-watch"></i>
-                              阅读次数:<span id="busuanzi_value_page_pv"></span>次
-                            </span>
-                            {% endif %}
+              {% if forloop.first %}
+                    <span id="busuanzi_container_page_pv" style="float: right">
+                        <i class="octicon octicon-eye-watch"></i>
+                      阅读次数:<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+              {% endif %}
           {% endfor %}
         </div>
       </div>
     </div>
   </div>
 </div>
-</section> 
+</section>
+
 <!-- / .banner -->
  <section class="container content">
 <div class="columns">
@@ -42,40 +40,27 @@ layout: default
     <article class="article-content markdown-body">
     {{ content }}
     </article>
-    <div class="share">
-      {% include sns-share.html %}
-    </div>
+    <!--<div class="share">-->
+      <!--{% include sns-share.html %}-->
+    <!--</div>-->
     <div class="comment">
-    
-    
-      <!--原始评论-->
-      <!--{% include comments.html %} -->
-      <!--使用gitment添加评论的功能-->
-      <!--<div id="gitmentContainer"></div>-->
-      <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-      <!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
-      <!--<script>-->
-      <!--var gitment = new Gitment({-->
-          <!--owner: 'AustinKuture',-->
-          <!--repo: 'http://www.kuture.com.cn',-->
-          <!--oauth: {-->
-              <!--client_id: '59677c9bd1d3ccd4270a',-->
-              <!--client_secret: '1a27ce98b9a10e7e3ebe567742361527731fd0c8',-->
-          <!--},-->
-      <!--});-->
-      <!--gitment.render('gitmentContainer');-->
-      <!--</script>-->
+
       {% if site.intensedebate_comments %}
         {% include intensedebate-comments.html %}
       {% endif %}
      </div>
+
   </div>
+
   <div class="column one-fourth">
     {% include sidebar-search.html %}
     {% include sidebar-qrcode.html %}
     {% include sidebar-post-nav.html %}
   </div>
+
 </div>
+
+
 </section>
 
 

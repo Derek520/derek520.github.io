@@ -23,11 +23,14 @@ comments: true
                         <span class="octicon octicon-mark-github"></span>
                         <a href="https://github.com/{{ site.github_username }}" target="_blank">{{ site.github_username }}</a>
                     </span>
-                    <span id="busuanzi_container_site_pv" class="meta-info">
-                        本站总访问量<span id="busuanzi_value_site_pv"></span>次
-                    </span>&nbsp;&nbsp;
+
+                    <!--<span id="busuanzi_container_site_pv" class="meta-info">-->
+                        <!--<i class="octicon octicon-eye"></i>-->
+                        <!--总访问量:<span id="busuanzi_value_site_pv"></span>次-->
+                    <!--</span>&nbsp;&nbsp;-->
                     <span id="busuanzi_container_site_uv" class="meta-info">
-                      本站访客数<span id="busuanzi_value_site_uv"></span>人次
+                        <i class="octicon octicon-person"></i>
+                      访问人数:<span id="busuanzi_value_site_uv"></span>人次
                     </span>
                 </div>
             </div>
@@ -56,16 +59,15 @@ comments: true
                           <span class="octicon octicon-file-directory"></span>
                           <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
                         </span>
-                            {% if forloop.first %}
+                                {% if forloop.first %}
+                                <span style="float: right">
+                                    <i class="octicon octicon-eye"></i>
+                                  <a href="{{ site.url }}{{ post.url }}">阅读全文</a>
+                                </span>
 
-
-
-                            <span id="busuanzi_container_page_pv" style="float: right">
-                                <i class="octicon octicon-eye"></i>
-                              阅读次数:<span id="busuanzi_value_page_pv"></span>次
-                            </span>
-                            {% endif %}
+                                {% endif %}
                         {% endfor %}
+
 
                     </p>
                 </li>
