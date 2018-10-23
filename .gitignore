@@ -8,5 +8,6 @@ migrations/
 .idea/
 logs/
 myspace/
+_site/
 static/images/logo.png
 web_sso/migrations/0001_initial.py
