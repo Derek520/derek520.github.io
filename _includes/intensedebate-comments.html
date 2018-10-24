@@ -1,24 +1,42 @@
 
 {% if page.comments != false %}
+        <script type="text/javascript">
+           (function(d, s) {
+               var j, e = d.getElementsByTagName(s)[0];
 
-    <script>
-    var idcomments_acct = '6aa46fae18e440caa5179f7dbda40e31';
-    var idcomments_post_id = '{{ page.url }}';
-    var idcomments_post_url;
+               if (typeof LivereTower === 'function') { return; }
 
-    </script>
+               j = d.createElement(s);
+               j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+               j.async = true;
 
-    <span id="IDCommentsPostTitle" style="display:none">
+               e.parentNode.insertBefore(j, e);
+           })(document, 'script');
+        </script>
+    <div id="lv-container" data-id="city" data-uid="{{ site.livere_uid }}"></div>
 
-    </span>
-<script>
+    <!--<script>-->
+    <!--var idcomments_acct = '6aa46fae18e440caa5179f7dbda40e31';-->
+    <!--var idcomments_post_id = '{{ page.url }}';-->
+    <!--var idcomments_post_url;-->
 
-</script>
-    <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'>
+    <!--</script>-->
 
-    </script>
+    <!--<span id="IDCommentsPostTitle" style="display:none">-->
+
+    <!--</span>-->
+<!--<script>-->
+
+<!--</script>-->
+    <!--<script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'>-->
+
+    <!--</script>-->
 
 {% endif %}
 
+
+<!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
 
 
