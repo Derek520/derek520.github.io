@@ -7,12 +7,13 @@ keywords: Tensorflow
 comments: true
 ---
 
-摘要：Tensorflow安装学习
+> 摘要：Tensorflow安装学习
 
 
 1. Tensorflow安装：anaconda3 python3.6;
 
 windows安装以管理员权限打开命令窗口;linux/MAX直接执行下面命令   
+
 ```mysql
 pip install --upgrade --ignore-installed tensorflow
 ```

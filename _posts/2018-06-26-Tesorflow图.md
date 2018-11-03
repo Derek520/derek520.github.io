@@ -7,17 +7,21 @@ keywords: Tensorflow
 comments: true
 ---
 
-
+> Tensorflow图的使用案例
 
 ### 图
 Tensorflow图默认已经注册，一组表示 tf.Operation计算单位的对象和tf.Tensor
 表示操作之间流动的数据单元的对象
 
-获取调用默认图对象：
+获取调用默认图对象：  
+
+```python
 tf.get_default_graph()
 op、sess或者tensor 的graph属性
+```
 
 #### 创建新图
+
 ```mysql
 tf.Graph()
 
@@ -129,10 +133,12 @@ if __name__ == '__main__':
 
 #### 会话
 
-- tf.Session()
+- tf.Session()  
+
 运行TensorFlow操作图的类，使用默认注册的图（可以指定运行图）
 
-- 会话资源
+- 会话资源  
+
 会话可能拥有很多资源，如 tf.Variable，tf.QueueBase
 和tf.ReaderBase，会话结束后需要进行资源释放
 
@@ -146,7 +152,8 @@ with tf.Session() as sess:
 - 交互式：tf.InteractiveSession()  
 
 
-#### 会话run()方法
+#### 会话run()方法  
+
 run(fetches, feed_dict=None,graph=None)
 	运行ops和计算tensor
 嵌套列表，元组，
@@ -189,7 +196,8 @@ if __name__ == '__main__':
 ### 张量
 
 - 一个类型化的N维度数组（tf.Tensor）
-- 有三部分组成：名字，形状，数据类型
+- 有三部分组成：名字，形状，数据类型  
+
 ```mysql
 # 张量的三要素：
 # 名称：默认，也可以自己指定
