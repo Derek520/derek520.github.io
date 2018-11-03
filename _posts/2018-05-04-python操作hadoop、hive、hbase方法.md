@@ -7,16 +7,15 @@ keywords: 大数据
 comments: true
 ---
 
-摘要：基于业务需要，需要对hadoop、hive、hbase操作，平时都是在命令行或图形界面操作，现在需要在代码块中连接操作，第一次装遇到不少坑，记录下正确的方法
+>摘要：基于业务需要，需要对hadoop、hive、hbase操作，平时都是在命令行或图形界面操作，现在需要在代码块中连接操作，第一次装遇到不少坑，记录下正确的方法
    
-```python
-系统：deepin15.7
-python版本：python3.5;
-```
 
-１．　连接hive方法，采用pyhive连接
-    需要安装的依赖，好多实在安装依赖时卡主了
-    按照以下步骤安装，顺利完成
+>系统：deepin15.7
+python版本：python3.5;   
+
+>连接hive方法，采用pyhive连接
+需要安装的依赖，好多实在安装依赖时卡主了
+按照以下步骤安装，顺利完成
     
 ```python
 sudo apt-get install sasl2-bin
@@ -33,9 +32,10 @@ conn = hive.Connection(host="xxxxx", port=10000, username='xxxx', database='defa
  
    
 2. 连接hbase方法，当你hive连接没问题，那连接hbase没什么问题
-    需要安装依赖关系，按照一下步骤安装，　
+    
+> 需要安装依赖关系，按照一下步骤安装，　
     　
-````python
+```python
 pip install thrift　　　＃这一步，就是上面　pip install thrift_sasl，如果装了，就不用再装
 pip install happybase　　#happybase　连接跟我们正常连接数据库一样
 
@@ -51,7 +51,7 @@ table_prefix_separator：用于table_prefix的分隔符
 compat：兼容模式
 transport：运输模式
 protocol：协议
-````  
+```
             
 
 3. 连接hdfs方法，  
