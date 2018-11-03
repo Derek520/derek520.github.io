@@ -24,6 +24,7 @@ html代码首尾加上标识语言
 
 效果如下所示：
 
+```python
 {% highlight html linenos %}
 <html>
     <head>
@@ -34,5 +35,6 @@ html代码首尾加上标识语言
     </body>
 </html>
 {% endhighlight %}
+```
 
 

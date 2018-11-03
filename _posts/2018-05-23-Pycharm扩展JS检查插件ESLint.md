@@ -24,10 +24,12 @@ JSHint 和 JSLint 也是静态代码检查工具，但 ESLint 比它们功能强
 
 ESLint 是用 Node.js 写的，可以通过 npm 来安装。ESLint 也可以在 webpack(eslint-loader) 和 Gulp.js(gulp-eslint) 中使用。
 
-### 打开Pycharm终端本地或者本地终端，安装ESLint
+### 打开Pycharm终端本地或者本地终端，安装ESLint  
+
 ```
 npm install -g eslint
-```
+```  
+
 ![eslint00](/images/posts/Pycharm/eslint00.png)
 > /home/kuture/.npm/lib/node_modules/eslint/bin/eslint.js为安装路径
 

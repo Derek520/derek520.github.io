@@ -11,8 +11,11 @@ comments: true
 
 1. 安装jpype，安装命令如下  
 
-    pip install jpype1　　　　#此明令是python３.6安装名字
+```python
+pip install jpype1　　　　#此明令是python３.6安装名字
     
+```
+
 2. 下来就是调用，使用了：  
 
     ![](/images/assets/jpype.png)
