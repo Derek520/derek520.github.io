@@ -20,10 +20,13 @@ comments: true
 
 > sklearn特征处理API：sklearn.preprocessing
 
-  * 数值型数据：标准缩放：		
-    * 1、归一化             		
+  * 数值型数据：标准缩放：
+		
+    * 1、归一化
+             		
     * 2、标准化
-    * 3、缺失值			 
+    * 3、缺失值	
+		 
   * 别型数据：one-hot编码
   * 时间类型：时间的切分
   
@@ -34,7 +37,8 @@ comments: true
 
 ![sklearn-01](/images/posts/Sklearn/sklearn-01-01.png)
 
->注：作用于每一列，max为一列的最大值，min为一列的最小值,那么X’’为最终结果，mx，mi分别为指定区间值默认mx为1,mi为0
+>注：作用于每一列，max为一列的最大值，min为一列的最小值,那么X’’
+为最终结果，mx，mi分别为指定区间值默认mx为1,mi为0
 
 归一化计算过程
 
@@ -46,7 +50,8 @@ comments: true
 
 > 注：里面是第一步，还需要第二步乘以(1-0)+0
 
-sklearn归一化API
+sklearn归一化API  
+
 ```
 sklearn.preprocessing.MinMaxScaler
 ```
@@ -57,7 +62,8 @@ sklearn.preprocessing.MinMaxScaler
     * X:numpy array格式的数据[n_samples,n_features]
     * 返回值：转换后的形状相同的array
     
-###### 案例测试
+###### 案例测试  
+
 ```
 from sklearn.preprocessing import MinMaxScaler
 
@@ -77,7 +83,8 @@ mydatas = unificati.fit_transform(mydata)
 print('归一化特征数据：\n',mydatas)
 ```
 
-运行结果：
+运行结果：  
+
 ```
  [[1.         0.         0.         0.        ]
  [0.         1.         1.         0.83333333]

@@ -144,7 +144,9 @@ print('数据还原:',dataCount.inverse_transform(mydata))
 
 #### TF-IDF
 
-> TF-IDF的主要思想是：如果某个词或短语在一篇文章中出现的概率高，并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分能力，适合用来分类
+> TF-IDF的主要思想是：如果某个词或短语在一篇文章中出现的概率高，
+并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分
+能力，适合用来分类
 > TF-IDF作用：用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度。
 > 类：sklearn.feature_ectraction.text.TfidfVectorizer
 
@@ -167,10 +169,15 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 mytext = ['to be or not to be, that is a question','where there is a will, there is a way']
 
-# 创建tf-idf实例化对象
-tfidfs = TfidfVectorizer()
+# 创建tf-idf实例化对象  
 
-# 获取TF-IDF特征对象
+```python
+tfidfs = TfidfVectorizer()
+```
+
+# 获取TF-IDF特征对象  
+
+```python
 mydata = tfidfs.fit_transform(mytext)
 
 print('特征类别：',tfidfs.get_feature_names())
@@ -179,7 +186,10 @@ print('特征矩阵：',mydata.toarray())
 print('数据还原：',tfidfs.inverse_transform(mydata))
 
 ```
-运行结果
+
+
+运行结果  
+
 ```
 特征类别： ['be', 'is', 'not', 'or', 'question', 'that', 'there', 'to', 'way', 'where', 'will']
 特征矩阵： [[0.56554419 0.20119468 0.2827721  0.2827721  0.2827721  0.2827721

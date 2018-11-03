@@ -55,13 +55,16 @@ contains 匹配一个属性值中包含的字符串
 
 text（） 匹配的是显示文本信息，此处也可以用来做定位用
 
+```python
 
-//input\[starts-with\(@name,'name1'\)\]     查找name属性中开始位置包含'name1'关键字的页面元素
+//input[starts-with(@name,'name1')]     查找name属性中开始位置包含'name1'关键字的页面元素
 
-//input\[contains\(@name,'na'\)\]         查找name属性中包含na关键字的页面元素
+//input[contains(@name,'na')]         查找name属性中包含na关键字的页面元素
 
-&lt;a href="http://www.baidu.com"&gt;百度搜索&lt;/a&gt;
+&lt;a href="http://www.baidu.com"&gt;百度搜索&lt;a&gt;
 
-xpath写法为 //a\[text\(\)='百度搜索'\] 
+xpath写法为 //a[text()='百度搜索'] 
 
-或者 //a\[contains\(text\(\),"百度搜索"\)\]
+或者 //a[contains(text(),"百度搜索")]
+
+```

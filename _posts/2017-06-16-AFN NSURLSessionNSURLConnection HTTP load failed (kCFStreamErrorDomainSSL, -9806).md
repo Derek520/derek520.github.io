@@ -8,9 +8,8 @@ comments: true
 ---
 
 
-# AFN NSURLSession/NSURLConnection HTTP load failed (kCFStreamErrorDomainSSL, -9806)
+> AFN NSURLSession/NSURLConnection HTTP load failed (kCFStreamErrorDomainSSL, -9806)
 
-作者: **AustinKuture**
 
 ```
 摘要: 使用AFNetworking请求https链接的数据时,

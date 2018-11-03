@@ -9,7 +9,8 @@ comments: true
 
 摘要：在抓取数据中遇到的动态页面，js加载的数据解决方法，selenium的使用方法，以及如何使用cookie，使用场景附带代码实例
 
-### 加载动态网页：
+### 加载动态网页：  
+
 ```angular2html
 
 from selenium import webdriver
@@ -59,38 +60,49 @@ driver.quit()
 
 ### 定位和操作：
 
-driver.find\_element\_by\_id\(“kw”\).send\_keys\(“长城”\)
-driver.find\_element\_by\_id\("su"\).click\(\)
+```python
+driver.find_element_by_id(“kw”).send_keys(“长城”)
+driver.find_element_by_id("su").click()
 
+```
 ### 查看请求信息：
 
-driver.page\_source
-driver.get\_cookies\(\)
-driver.current\_url
+```python
+driver.page_source
+driver.get_cookies()
+driver.current_url
+```
 
 ### 退出
 
-driver.close\(\) \#退出当前页面
-driver.quit\(\) \#退出浏览器
+```python
+driver.close() #退出当前页面
+driver.quit() #退出浏览器
+```
 
 ## 页面元素定位
 
 ### 用法：
 
-find\_element\_by\_id \(返回一个\)
-find\_elements\_by\_xpath （返回一个列表）
-find\_elements\_by\_link\_text
-find\_elements\_by\_partial\_link\_text
-find\_elements\_by\_tag\_name
-find\_elements\_by\_class\_name
-find\_elements\_by\_css\_selector
+```python
+find_element_by_id (返回一个)
+find_elements_by_xpath （返回一个列表）
+find_elements_by_link_text
+find_elements_by_partial_link_text
+find_elements_by_tag_name
+find_elements_by_class_name
+find_elements_by_css_selector
+```
 
 ### 注意点:
 
-find\_element 和find\_elements的区别：返回一个和返回一个列表
-by\_link\_text和by\_partial\_link\_text的区别：全部文本和包含某个文本
-by\_css\_selector的用法： \#food span.dairy.aged
-by\_xpath中获取属性和文本需要使用get\_attribute\(\) 和.text
+```python
+find_element 和find_elements的区别：返回一个和返回一个列表
+by_link_text和by_partial_link_text的区别：全部文本和包含某个文本
+by_css_selector的用法： #food span.dairy.aged
+by_xpath中获取属性和文本需要使用get_attribute() 和.text
+
+```
 
 ```
 from selenium import webdriver
@@ -150,9 +162,11 @@ driver.quit()
 
 ### Cookie相关用法：
 
-{cookie\[‘name’\]: cookie\[‘value’\] for cookie in driver.get\_cookies\(\)}
-driver.delete\_cookie\("CookieName"\)
-driver.delete\_all\_cookies\(\)
+```python
+{cookie[‘name’]: cookie[‘value’] for cookie in driver.get_cookies()}
+driver.delete_cookie("CookieName")
+driver.delete_all_cookies()
+```
 
 ## Selenium总结
 
@@ -167,7 +181,7 @@ driver.delete\_all\_cookies\(\)
 * 保存
 * 退出driver
 #### Cookies相关方法：
-* get\_cookies\(\)
+* `get_cookies()`
 #### 页面等待
 * 强制等待
 

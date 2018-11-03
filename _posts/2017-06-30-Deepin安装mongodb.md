@@ -11,19 +11,22 @@ comments: true
 
 安装网址：[https://docs.mongodb.com/manual/administration/install-on-linux/](https://docs.mongodb.com/manual/administration/install-on-linux/)
 
-#### 1. 导入MongoDB public GPG Key    
+#### 1. 导入MongoDB public GPG Key   
+   
 ```python
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 # 如果添加公钥时，报错，没有dirmngr,执行下面的安装命令，再添加
 sudo apt install dirmngr
 ```
 
-#### 2. 添加软件源 
+#### 2. 添加软件源   
+
 ```python
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
 ```
 
-#### 3. 更新本地软件包
+#### 3. 更新本地软件包  
+
 ```python
 sudo apt-get update
 ```
@@ -33,7 +36,8 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 ```
 
-#### 基本使用：
+#### 基本使用：  
+
 ```python
 mongo -version
 #查看帮助

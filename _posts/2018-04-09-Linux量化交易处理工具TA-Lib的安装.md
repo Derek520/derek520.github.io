@@ -16,11 +16,13 @@ comments: true
 #### pip 指令安装
 > 通过终端执行指令进行安装
 
-##### Deepin,Ubuntu 
+##### Deepin,Ubuntu   
+
 ```
 pip install TA-Lib
 ```
-##### MacOS
+##### MacOS  
+
 ```
 brew install ta-lib
 ```
@@ -29,7 +31,8 @@ brew install ta-lib
 在Linux系统下会报如下错误
 ![Wrong00](/images/posts/Linux/TA-Lib-001.png)
 解决方法：
-1 安装依赖文件ta-lib
+1 安装依赖文件ta-lib  
+
 ```
 sudo apt-get install ta-lib
 ```
@@ -37,7 +40,8 @@ sudo apt-get install ta-lib
 
 ![Wrong01](/images/posts/Linux/TA-Lib-002.png)
 
-2 继续安装依赖文件python3-dev
+2 继续安装依赖文件python3-dev  
+
 ```
 sudo apt-get install python3-dev
 ```
@@ -57,7 +61,8 @@ sudo apt-get install python3-dev
 
 > 5 sudo make install
 
-安装编译并安装完成后，重装执行指令即可
+安装编译并安装完成后，重装执行指令即可  
+
 ```
 pip install TA-Lib
 ```
