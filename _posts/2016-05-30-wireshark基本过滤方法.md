@@ -7,12 +7,24 @@ keywords: Wireshark
 comments: true
 ---
 
-摘要：wireshark网页分析利器，文档只是常用的一些过滤规则
+> 摘要：wireshark网页分析利器，文档只是常用的一些过滤规则
 
-- 过滤ｉp  
-    iprc eq 10.175.168.1.s82
-- 过滤端口
+- 安装后非root用户使用,需要更改权限
+```python
+sudo groupadd wireshark
+sudo chgrp wireshark /usr/bin/dumpcap
+sudo chmod 4755 /usr/bin/dumpcap
+sudo gpasswd -a derek wireshark
+```
+
+- 过滤ip  
+````python
+iprc eq 10.175.168.1.s82
+````
+- 过滤端口  
+
 例子:  
+```python
 tcp.port eq 80 // 不管端口是来源的还是目标的都显示
 tcp.port == 80
 tcp.port eq 2722
@@ -20,79 +32,100 @@ tcp.port eq 80 or udp.port eq 80
 tcp.dstport == 80 // 只显tcp协议的目标端口80
 tcp.srcport == 80 // 只显tcp协议的来源端口80
 udp.port eq 15000
+```
 
 - 过滤端口范围  
+
+```python
 tcp.port >= 1 and tcp.port <= 80
+```
 
 - 过滤协议  
-    例子:  
-    tcp  
-    udp  
-    arp  
-    icmp  
-    http  
-    smtp  
-    ftp  
-    dns  
-    msnms  
-    ip  
-    ssl  
-    oicq  
-    bootp  
-    等等  
-    排除arp包，如!arp   或者   not arp
+例子:  
+```python
+tcp  
+udp  
+arp  
+icmp  
+http  
+smtp  
+ftp  
+dns  
+msnms  
+ip  
+ssl  
+oicq  
+bootp  
+等等  
+排除arp包，如!arp   或者   not arp
+```
+
 
 - 过滤MAC  
-    太以网头过滤  
-    eth.dst == A0:00:00:04:C5:84 // 过滤目标mac  
-    eth.src eq A0:00:00:04:C5:84 // 过滤来源mac  
-    eth.dst==A0:00:00:04:C5:84  
-    eth.dst==A0-00-00-04-C5-84  
-    eth.addr eq A0:00:00:04:C5:84 // 过滤来源MAC和目标MAC都等于A0:00:00:04:C5:84的  
-    less than 小于 < lt   
-    小于等于 le  
-    等于 eq  
-    大于 gt  
-    大于等于 ge  
-    不等 ne  
+```python
+太以网头过滤  
+eth.dst == A0:00:00:04:C5:84 // 过滤目标mac  
+eth.src eq A0:00:00:04:C5:84 // 过滤来源mac  
+eth.dst==A0:00:00:04:C5:84  
+eth.dst==A0-00-00-04-C5-84  
+eth.addr eq A0:00:00:04:C5:84 // 过滤来源MAC和目标MAC都等于A0:00:00:04:C5:84的  
+less than 小于 < lt   
+小于等于 le  
+等于 eq  
+大于 gt  
+大于等于 ge  
+不等 ne
+```  
 - 包长度过滤  
     例子:  
-    udp.length == 26 这个长度是指udp本身固定长度8加上udp下面那块数据包之和  
-    tcp.len >= 7   指的是ip数据包(tcp下面那块数据),不包括tcp本身  
-    ip.len == 94 除了以太网头固定长度14,其它都算是ip.len,即从ip本身到最后  
-    frame.len == 119 整个数据包长度,从eth开始到最后   
-    eth —> ip or arp —> tcp or udp —> data  
+````python
+udp.length == 26 这个长度是指udp本身固定长度8加上udp下面那块数据包之和  
+tcp.len >= 7   指的是ip数据包(tcp下面那块数据),不包括tcp本身  
+ip.len == 94 除了以太网头固定长度14,其它都算是ip.len,即从ip本身到最后  
+frame.len == 119 整个数据包长度,从eth开始到最后   
+eth —> ip or arp —> tcp or udp —> data  
+````
 
 - http模式过滤  
-    例子:  
-    http.request.method == “GET”  
-    http.request.method == “POST”  
-    http.request.uri == “/img/logo-edu.gif”  
-    http contains “GET”  
-    http contains “HTTP/1.”  
-    // GET包  
-    http.request.method == “GET” && http contains “Host: “  
-    http.request.method == “GET” && http contains “User-Agent: “  
-    // POST包  
-    http.request.method == “POST” && http contains “Host: “  
-    http.request.method == “POST” && http contains “User-Agent: “  
-    // 响应包  
-    http contains “HTTP/1.1 200 OK” && http contains “Content-Type: “  
-    http contains “HTTP/1.0 200 OK” && http contains “Content-Type: “  
-    一定包含如下  
-    Content-Type:  
+
+```python
+例子:  
+http.request.method == “GET”  
+http.request.method == “POST”  
+http.request.uri == “/img/logo-edu.gif”  
+http contains “GET”  
+http contains “HTTP/1.”  
+// GET包  
+http.request.method == “GET” && http contains “Host: “  
+http.request.method == “GET” && http contains “User-Agent: “  
+// POST包  
+http.request.method == “POST” && http contains “Host: “  
+http.request.method == “POST” && http contains “User-Agent: “  
+// 响应包  
+http contains “HTTP/1.1 200 OK” && http contains “Content-Type: “  
+http contains “HTTP/1.0 200 OK” && http contains “Content-Type: “  
+一定包含如下  
+Content-Type:  
+```
 
 
 - TCP参数过滤
+
+```
 tcp.flags 显示包含TCP标志的封包。  
 tcp.flags.syn == 0x02     显示包含TCP SYN标志的封包。  
-tcp.window_size == 0 && tcp.flags.reset != 1  
--------------------------------------------------
-- 包内容过滤
+tcp.window_size == 0 && tcp.flags.reset != 1 
+
+``` 
+- 包内容过滤  
+```python
 tcp[20]表示从20开始，取1个字符  
 tcp[20:]表示从20开始，取1个字符以上  
-注： 些两虚线中的内容在我的wireshark（linux）上测试未通过  
-- msn  
+注： 些两虚线中的内容在我的wireshark（linux）上测试未通过 
+``` 
+- msn   
+
+```python
 msnms && tcp[23:1] == 20 // 第四个是0x20的msn数据包  
 msnms && tcp[20:1] >= 41 && tcp[20:1] <= 5A && tcp[21:1] >= 41 && tcp[21:1] <= 5A && tcp[22:1] >= 41 && tcp[22:1] <= 5A  
 msnms && tcp[20:3]==”USR” // 找到命令编码是USR的数据包  
@@ -110,6 +143,7 @@ MSN 协议分析
 http://blog.csdn.net/lzyzuixin/archive/2009/03/13/3986597.aspx  
 
 
+```
 - wireshark字符串过虑语法字符  
 如下内容转自：http://www.csna.cn/viewthread.php?tid=14614  
 类似正则表达式的规则。
