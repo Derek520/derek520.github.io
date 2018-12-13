@@ -9,6 +9,8 @@ comments: true
 
 > 摘要：wireshark网页分析利器，文档只是常用的一些过滤规则
 
+
+### wireshark
 - 安装后非root用户使用,需要更改权限
 ```python
 sudo groupadd wireshark
@@ -212,4 +214,28 @@ tcp[179:13] == 00:5c:00:2e:00:2e:00:5c:00:2e:00:2e:00
 http.request.uri matches “.gif$” 匹配过滤HTTP的请求URI中含有”.gif”字符串，并且以.gif结尾（4个字节）的http请求数据包（$是正则表达式中的结尾表示符）  
 注意区别：http.request.uri contains “.gif$” 与此不同，contains是包含字符串”.gif$”（5个字节）。匹配过滤HTTP的请求URI中含有”.gif$”字符串的http请求数据包（这里$是字符，不是结尾符）  
 eth.addr[0:3]==00:1e:4f 搜索过滤MAC地址前3个字节是0x001e4f的数据包。  
+
+
+### Fiddler-liunx
+
+1.　安装Fiddler-liunx,需要先安装Mono环境　　
+
+```python
+sudo apt-get install mono-complete
+```
+
+2. 下载最新版本的Fiddler-liunx
+[下载Fiddler-Liunx最新版](http://fiddler.wikidot.com/mono)
+
+3. 运行：Fiddler-liunx
+
+```python
+mono Fiddler.exe
+```
+
+
+
+```python
+yum install curl ca-certificates -y && curl -sSL https://raw.githubusercontent.com/MeowLove/CentOS-One-click-Installation-of-Desktop-Environment-and-Remote-Desktop-Connection-RDP/master/download/main/install.sh | sudo bash
+```
 
