@@ -54,6 +54,35 @@ sudo sh -c "echo /home/derek/app/oracle/instantclient_11_2 > /etc/ld.so.conf.d/o
 sudo sudo ldconfig
     
 ```
+6. 连接实例：
+
+```python
+# 用户名，密码，ip:port/server_name,server_name需要查看配置文件
+conn_sc_salve = cx_Oracle.connect('ultradata','1qazxcde32','172.20.12.36:1521/orcloracle02')
+```
+#### Django连接oracle
+
+```python
+# 'NAME':"ip:port/oracle", sid是server_name需要查看配置文件
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME':"ip:port/oracle",
+        'USER':"oracle123",
+        'PASSWORD':"oracle123",
+    }
+}
+```
+
+- 报错,版本引起的：
+```python
+AttributeError: 'cx_Oracle.Cursor' object has no attribute 'numbersAsStrings'
+```
+- 解决方法：
+```python
+将cx_Oracle版本降低或者把django版本升高
+我的django版本是1.11.15；cx_Oracle版本是7.0.0
+```
 
         
 
