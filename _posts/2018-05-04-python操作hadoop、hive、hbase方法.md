@@ -33,8 +33,8 @@ conn = hive.Connection(host="xxxxx", port=10000, username='xxxx', database='defa
    
 2. 连接hbase方法，当你hive连接没问题，那连接hbase没什么问题
     
-> 需要安装依赖关系，按照一下步骤安装，　
-    　
+> 需要安装依赖关系，按照一下步骤安装  
+
 ```python
 pip install thrift　　　＃这一步，就是上面　pip install thrift_sasl，如果装了，就不用再装
 pip install happybase　　#happybase　连接跟我们正常连接数据库一样
