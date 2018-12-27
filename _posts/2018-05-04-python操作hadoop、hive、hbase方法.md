@@ -105,5 +105,38 @@ mapper.py
         这条命令的意思，将123.txt文件内容输出到屏幕，将结果作为参数，给mapper.py，输出的结果进行排序，间隔符１；将输出的结果再出作为参数给reducer.py
         
 ````
-        
-    
+
+### 最新python3.5＋，python3.6＋;连接hive
+
+> 之前的连接方法死活不好使　　
+
+```python
+sudo apt-get install sasl2-bin
+sudo apt-get install libsasl2-dev
+```
+##### PyHive
+```python
+pip install --upgrade pip
+pip install sasl
+pip install --upgrade thrift
+pip install thrift-sasl
+pip install PyHive
+```
+
+##### impyla
+```python
+pip install --upgrade pip
+pip install pure-sasl
+pip install thrift_sasl==0.2.1
+pip install thrift
+pip install impyla
+```      
+
+#### 效果图
+
+![](/images/hive/1.png)
+
+![](/images/hive/2.png)
+
+![](/images/hive/3.png)
+
