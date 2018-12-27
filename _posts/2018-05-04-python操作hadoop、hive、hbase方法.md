@@ -132,11 +132,37 @@ pip install thrift
 pip install impyla
 ```      
 
-#### 效果图
+##### 效果图
 
 ![](/images/hive/1.png)
 
 ![](/images/hive/2.png)
 
 ![](/images/hive/3.png)
+
+##### 报错
+
+> thriftpy.transport.TTransportException: TTransportException(message="Could not start SASL: b'Error in sasl_client_start (-4) SASL(-4): no mechanism available: Unable to find a callback: 2'", type=1)
+
+
+hive-site.xml,默认是NONE,改成NOSASL  
+
+````python
+<property>
+    <name>hive.server2.authentication</name>
+    <value>NOSASL</value>
+    <description>
+      Expects one of [nosasl, none, ldap, kerberos, pam, custom].
+      Client authentication types.
+        NONE: no authentication check
+        LDAP: LDAP/AD based authentication
+        KERBEROS: Kerberos/GSSAPI authentication
+        CUSTOM: Custom authentication provider
+                (Use with property hive.server2.custom.authentication.class)
+        PAM: Pluggable authentication module
+        NOSASL:  Raw transport
+    </description>
+  </property>
+````
+
 
