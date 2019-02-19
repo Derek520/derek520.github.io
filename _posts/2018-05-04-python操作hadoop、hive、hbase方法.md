@@ -165,4 +165,35 @@ hive-site.xml,默认是NONE,改成NOSASL
   </property>
 ````
 
+##### 安装sasl报错　CentOS：
+```python
+
+ sasl/saslwrapper.h: In member function ‘bool saslwrapper::ClientImpl::getSSF(int*)’:
+    sasl/saslwrapper.h:390: 错误：‘conn’在此作用域中尚未声明
+    sasl/saslwrapper.h:390: 错误：‘SASL_SSF’在此作用域中尚未声明
+    sasl/saslwrapper.h:390: 错误：‘sasl_getprop’在此作用域中尚未声明
+    sasl/saslwrapper.h:391: 错误：‘SASL_OK’在此作用域中尚未声明
+    sasl/saslwrapper.h: In member function ‘void saslwrapper::ClientImpl::addCallback(long unsigned int, void*)’:
+    sasl/saslwrapper.h:407: 错误：‘callbacks’在此作用域中尚未声明
+    sasl/saslwrapper.h: In member function ‘void saslwrapper::ClientImpl::setError(const std::string&, int, const std::string&, const std::string&)’:
+    sasl/saslwrapper.h:419: 错误：‘conn’在此作用域中尚未声明
+    sasl/saslwrapper.h:420: 错误：‘sasl_errdetail’在此作用域中尚未声明
+    sasl/saslwrapper.h:422: 错误：‘sasl_errstring’在此作用域中尚未声明
+    sasl/saslwrapper.h: At global scope:
+    sasl/saslwrapper.h:434: 错误：变量或字段‘interact’声明为 void
+    sasl/saslwrapper.h:434: 错误：‘sasl_interact_t’在此作用域中尚未声明
+    sasl/saslwrapper.h:434: 错误：‘prompt’在此作用域中尚未声明
+    error: command 'gcc' failed with exit status 1
+    
+    ----------------------------------------
+Command "/root/.virtualenvs/django/bin/python3 -u -c "import setuptools, tokenize;__file__='/tmp/pip-install-i87ths29/sasl/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record /tmp/pip-record-5e0ytsoh/install-record.txt --single-version-externally-managed --compile --install-headers /root/.virtualenvs/django/include/site/python3.5/sasl" failed with error code 1 in /tmp/pip-install-i87ths29/sasl/
+
+```
+解决方法：　　
+
+```python
+Debian/Ubuntu: apt-get install python-dev libsasl2-dev gcc 
+CentOS/RHEL: yum install gcc-c++ python-devel.x86_64 cyrus-sasl-devel.x86_64
+```
+
 
