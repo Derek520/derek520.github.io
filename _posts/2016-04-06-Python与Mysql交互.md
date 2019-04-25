@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Python3 连接Mysql
+title:  Python 连接Mysql
 categories: Python
 description: python
 keywords: Python
@@ -118,4 +118,21 @@ if __name__ == '__main__':
     main()
 ```
 
+### python2 连接mysql
 
+> import MySQLdb  python2使用的包和python3不一样
+> pip install MySQLdb-python 容易失败
+
+centos 安装MySQLdb方法:  
+
+```python
+sudo yum install MySQL-python
+```
+ubuntu 安装MySQLdb方法:  
+
+```python
+sudo apt-get install libmysqlclient-dev libmysqld-dev python-dev python-setuptools
+
+pip install MySQL-python
+如果报错可能是pip版本问题，更新pip版本
+```
