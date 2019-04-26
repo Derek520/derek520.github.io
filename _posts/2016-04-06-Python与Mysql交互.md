@@ -136,3 +136,10 @@ sudo apt-get install libmysqlclient-dev libmysqld-dev python-dev python-setuptoo
 pip install MySQL-python
 如果报错可能是pip版本问题，更新pip版本
 ```
+
+### centos7 pip 安装
+
+```python
+yum -y install epel-release
+yum -y install python-pip
+```
