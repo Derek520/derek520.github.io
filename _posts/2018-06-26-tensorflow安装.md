@@ -124,3 +124,10 @@ print(sess.run(hello))
 ### 最新linux对应版本  
 
 ![](/images/tensorflow/tf.png)
+
+### cuda 10.0 下载地址
+<https://developer.nvidia.com/cuda-10.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=runfilelocal>
+
+![](/images/tensorflow/tf_2.jpg)
+
+![](/images/tensorflow/tf_3.jpg)
