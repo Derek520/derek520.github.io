@@ -131,3 +131,13 @@ print(sess.run(hello))
 ![](/images/tensorflow/tf_2.jpg)
 
 ![](/images/tensorflow/tf_3.jpg)
+
+
+### 下载需要nvidia 账户  
+![](/images/tensorflow/tf_4.jpg)
+
+### 安装cuda 10.0  
+
+```angular2
+sudo sh cuda_10.0.130_410.48_linux.run
+```
