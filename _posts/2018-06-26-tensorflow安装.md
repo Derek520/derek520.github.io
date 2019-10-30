@@ -117,5 +117,10 @@ print(sess.run(hello))
     pip install h5py==2.8.0
     
     
-13. 最终运行结果:
+13. 最终运行结果:  
 ![](/images/tensorflow/tensort_suc.png)
+
+
+### 最新linux对应版本  
+
+![](/images/tensorflow/tf.png)
