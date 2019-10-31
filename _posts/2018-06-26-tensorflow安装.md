@@ -109,7 +109,7 @@ print(sess.run(hello))
 
 运行没问题,报了告警,解决方法是： 
 
-    出错位置h5py\_init_.py:26 
+    出错位置h5py_init_.py:26 
     
 解决办法  
 
@@ -142,7 +142,7 @@ print(sess.run(hello))
 sudo sh cuda_10.0.130_410.48_linux.run
 ```
 
-### 需要安装 NVIDIA 410.93, CUDA 10.0, cudnn 7.4
+### 需要安装 NVIDIA 410.93, CUDA 10.0, cudnn 7.6
 
 系统：deepin   
 显卡：Quadro M2000M    
@@ -208,7 +208,7 @@ lsmod |grep -i nouveau
 sudo systemctl stop lightdm #or sudo service lightdm stop
 ``` 
 
-安装驱动NVIDIA    
+#### 5. 安装驱动NVIDIA    
 ```angular2
 chmod +x NVIDIA-Linux-x86_64-410.93.run #赋予可执行权限
 sudo ./NVIDIA-Linux-x86_64-410.93.run #安装驱动文件
@@ -216,7 +216,7 @@ sudo ./NVIDIA-Linux-x86_64-410.93.run #安装驱动文件
 > 在安装的cuda的时候，我的也是需要在无界面窗口才安装成功，网上好多时候是在图形界面安装的cuda
 > 为了少进入一次，在这也安装cuda
 
-安装CUDA  
+#### 6. 安装CUDA  
 ```angular2
 chmod +x cuda_10.0.130_410.48_linux.run 
 sudo ./cuda_10.0.130_410.48_linux.run --override
@@ -226,7 +226,7 @@ sudo ./cuda_10.0.130_410.48_linux.run --override
 
 安装完毕后重启：reboot   
 
-cuda环境变量    
+#### 7. cuda环境变量    
 ```angular2
 # bashrc
 echo 'export PATH=/usr/local/cuda-10.0/bin:$PATH' >> ~/.bashrc
@@ -236,11 +236,11 @@ source ~/.bashrc
 sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf_back
 ```
 
-执行nvidia-smi  
+#### 8. 执行nvidia-smi  
 ![](/images/tensorflow/nvidia.jpg)  
 发现这时候其实NVIDIA的显卡并没有工作，显存一点都没占用  
 
-设置默认nvidia显卡工作   
+#### 9. 设置默认nvidia显卡工作   
 ![](/images/tensorflow/nvidia2.jpg) 
 
 >执行上述命令获取nvidia显卡设备BusID，例子 01:00.0 填写PCI:1:0:0  
@@ -268,7 +268,7 @@ EndSection
 ```     
 ![](/images/tensorflow/nvidia3.jpg)     
 
-编辑~/.xinitrc    
+#### 10. 编辑~/.xinitrc    
 ```angular2
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
@@ -276,7 +276,7 @@ xrandr --dpi 96
 ``` 
 ![](/images/tensorflow/nvidia4.jpg) 
 
-编辑/etc/lightdm/display_setup.sh     
+#### 11. 编辑/etc/lightdm/display_setup.sh     
 ```angular2
 #!/bin/sh
 xrandr --setprovideroutputsource modesetting NVIDIA-0
@@ -285,36 +285,36 @@ xrandr --dpi 96
 ```     
 ![](/images/tensorflow/nvidia5.jpg) 
 
-赋值权限    
+#### 12. 赋值权限    
 ```angular2
 sudo chmod +x  /etc/lightdm/display_setup.sh
 ``` 
-编辑/etc/lightdm/lightdm.conf 在[Seat:*]行下添加   
+#### 13. 编辑/etc/lightdm/lightdm.conf 在[Seat:*]行下添加   
 
 ```angular2
 display-setup-script=/etc/lightdm/display_setup.sh
 ```
 ![](/images/tensorflow/nvidia6.jpg)
 
-重启动后，查看是否生效 
+#### 14. 重启动后，查看是否生效 
 
 ![](/images/tensorflow/nvidia7.jpg) 
 
-前面已经安装了cuda,现在安装cudnn       
+#### 15. 前面已经安装了cuda,现在安装cudnn       
 ```angular2
 # cudnn
 tar -xzvf cudnn-10.0-linux-x64-v7.4.2.24.tgz
 sudo cp -P cuda/include/cudnn.h /usr/local/cuda-10.0/include
-sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda10.0/lib64/
-sudo chmod a+r /usr/local/cuda10.0/lib64/libcudnn*  
+sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-10.0/lib64/
+sudo chmod a+r /usr/local/cuda-10.0/lib64/libcudnn*  
 
 ```
 
-检查是否安装成功    
+#### 16. 检查是否安装成功    
 
-![](/images/tensorflow/nvidia7.jpg) 
-![](/images/tensorflow/nvidia8.jpg) 
-![](/images/tensorflow/nvidia9.jpg)     
-![](/images/tensorflow/nvidia10.jpg)
+![](/images/tensorflow/nvidia7.jpg)     
+![](/images/tensorflow/nvidia8.jpg)     
+![](/images/tensorflow/nvidia9.jpg)        
+![](/images/tensorflow/nvidia10.jpg)    
 
 
