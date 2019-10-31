@@ -150,7 +150,9 @@ NVIDIA : 410.93
 CUDA: 10.0   
 cudnn: 7.6     
 
-#### deepin自带的显卡管理器，切换后的版本是：390 不满足需求,需要自己去官网下载；不能下载最新版本，下载历史版本
+> deepin自带的显卡管理器，切换后的版本是：390 不满足需求,需要自己去官网下载；不能下载最新版本.
+
+#### 下载历史版本
 
 **[NVIDIA历史版本下载地址](https://www.nvidia.cn/Download/Find.aspx?lang=cn)**  
 **[CUDA历史版本下载地址](https://developer.nvidia.com/cuda-toolkit-archive)**   
