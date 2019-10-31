@@ -136,8 +136,65 @@ print(sess.run(hello))
 ### 下载需要nvidia 账户  
 ![](/images/tensorflow/tf_4.jpg)
 
-### 安装cuda 10.0  
+### 安装cuda 10.0  ,
 
 ```angular2
 sudo sh cuda_10.0.130_410.48_linux.run
 ```
+
+### 需要安装 NVIDIA 410.93, CUDA 10.0, cudnn 7.4
+
+系统：deepin
+显卡：Quadro M2000M
+
+#### deepin自带的显卡管理器，切换后的版本是：390 不满足需求,需要自己去官网下载；不能下载最新版本，下载历史版本
+
+**[NVIDIA历史版本下载地址](https://www.nvidia.cn/Download/Find.aspx?lang=cn)**  
+**[CUDA历史版本下载地址](https://developer.nvidia.com/cuda-toolkit-archive)**   
+**[cudnn历史版本下载地址](https://developer.nvidia.com/rdp/cudnn-archive)** 
+### 下载好软件后,进行安装,方法基本和网上一样，要注意细节，不然进不了图形页面，就需要折腾一番
+
+#### 1. 禁用nouveau   
+```angular2
+# 这个文件名字不一定就是这样，但是肯定是blacklist开头的文件
+vi /etc/modprobe.d/blacklist-bcm43.conf
+# 在后面加入下面两行
+blacklist nouveau
+options nouveau modeset=0
+```
+保存后立即生效：    
+```angular2
+sudo update-initramfs -u 
+``` 
+
+#### 2. 卸载之前的NVIDIA 
+```angular2
+# 要是没有安装，也不会有问题，一定要保证卸载完成，不要报错;
+sudo apt-get --purge remove nvidia-*    
+# 不要使用 sudo apt-get autoremove
+```
+
+#### 3. 重启电脑，哈哈，这好多人都着了道；
+
+```angular2
+#说说为什么要重启,重启是为了释放nouveau资源占用问题
+# 重启后执行
+lsmod |grep -i nouveau  
+``` 
+如果进不了图形界面，看下面步骤
+
+> 下来就是网上说的要重启电脑，我重启后就进不了图形界面，在这坑大了，看网上有的人都能进去；
+> 重点：进不去就会卡在logo或黑窗口界面，如果到了这一步，别乱折腾，
+
+在安装NVIDIA的时候需要关闭 Secure Boot 值改成Disabled。每个厂家进去bios都不一样，需要自己查，我的是F1。    
+
+如果进不了图形界面，我们就进入无界面窗口，用过服务器的人都知道，服务器基本都是无界面. 
+继续开机后,显示 deepin 15.XX 直接按键盘：e  
+
+> 在linux   /boot/vm***   在这一行最后面：systemd.unit=multi-user.target
+
+按键盘：Ctrl+x 等待进入无界面窗口，入下面的动态图
+
+![](/images/tensorflow/deepin.gif)
+
+
