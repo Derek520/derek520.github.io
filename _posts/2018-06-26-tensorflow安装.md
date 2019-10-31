@@ -156,8 +156,8 @@ cudnn: 7.6
 
 **[NVIDIA历史版本下载地址](https://www.nvidia.cn/Download/Find.aspx?lang=cn)**  
 **[CUDA历史版本下载地址](https://developer.nvidia.com/cuda-toolkit-archive)**   
-**[cudnn历史版本下载地址](https://developer.nvidia.com/rdp/cudnn-archive)** 
-#### 下载好软件后,进行安装,方法基本和网上一样，要注意细节，不然进不了图形页面，就需要折腾一番
+**[cudnn历史版本下载地址](https://developer.nvidia.com/rdp/cudnn-archive)**     
+> 下载好软件后,进行安装,方法基本和网上一样，要注意细节，不然进不了图形页面，就需要折腾一番 
 
 #### 1. 禁用nouveau   
 ```angular2
