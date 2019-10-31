@@ -245,6 +245,7 @@ sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf_back
 
 >执行上述命令获取nvidia显卡设备BusID，例子 01:00.0 填写PCI:1:0:0  
 编辑/etc/X11/xorg.conf,如果已经有这个文件，最好复制一份   
+  
 ```angular2
 sudo vi /etc/X11/xorg.conf
 
@@ -264,25 +265,25 @@ Section "Device"
     VendorName     "NVIDIA Corporation"
 EndSection
 
-```
-![](/images/tensorflow/nvidia3.jpg) 
+```     
+![](/images/tensorflow/nvidia3.jpg)     
 
-编辑~/.xinitrc
+编辑~/.xinitrc    
 ```angular2
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 xrandr --dpi 96
-```
-![](/images/tensorflow/nvidia4.jpg)
+``` 
+![](/images/tensorflow/nvidia4.jpg) 
 
-编辑/etc/lightdm/display_setup.sh 
+编辑/etc/lightdm/display_setup.sh     
 ```angular2
 #!/bin/sh
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 xrandr --dpi 96
-``` 
-![](/images/tensorflow/nvidia5.jpg)
+```     
+![](/images/tensorflow/nvidia5.jpg) 
 
 赋值权限    
 ```angular2
@@ -295,11 +296,11 @@ display-setup-script=/etc/lightdm/display_setup.sh
 ```
 ![](/images/tensorflow/nvidia6.jpg)
 
-重启动后，查看是否生效
+重启动后，查看是否生效 
 
-![](/images/tensorflow/nvidia7.jpg)
+![](/images/tensorflow/nvidia7.jpg) 
 
-前面已经安装了cuda,现在安装cudnn   
+前面已经安装了cuda,现在安装cudnn       
 ```angular2
 # cudnn
 tar -xzvf cudnn-10.0-linux-x64-v7.4.2.24.tgz
