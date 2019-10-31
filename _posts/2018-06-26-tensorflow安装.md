@@ -144,8 +144,8 @@ sudo sh cuda_10.0.130_410.48_linux.run
 
 ### 需要安装 NVIDIA 410.93, CUDA 10.0, cudnn 7.4
 
-系统：deepin
-显卡：Quadro M2000M
+系统：deepin   
+显卡：Quadro M2000M    
 
 #### deepin自带的显卡管理器，切换后的版本是：390 不满足需求,需要自己去官网下载；不能下载最新版本，下载历史版本
 
