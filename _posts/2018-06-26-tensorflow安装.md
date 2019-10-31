@@ -142,17 +142,20 @@ print(sess.run(hello))
 sudo sh cuda_10.0.130_410.48_linux.run
 ```
 
-### 需要安装 NVIDIA 410.93, CUDA 10.0, cudnn 7.6
+### 最新安装 Tensorflow-gpu==1.13.1 
 
 系统：deepin   
-显卡：Quadro M2000M    
+显卡：Quadro M2000M  
+NVIDIA : 410.93   
+CUDA: 10.0   
+cudnn: 7.6     
 
 #### deepin自带的显卡管理器，切换后的版本是：390 不满足需求,需要自己去官网下载；不能下载最新版本，下载历史版本
 
 **[NVIDIA历史版本下载地址](https://www.nvidia.cn/Download/Find.aspx?lang=cn)**  
 **[CUDA历史版本下载地址](https://developer.nvidia.com/cuda-toolkit-archive)**   
 **[cudnn历史版本下载地址](https://developer.nvidia.com/rdp/cudnn-archive)** 
-### 下载好软件后,进行安装,方法基本和网上一样，要注意细节，不然进不了图形页面，就需要折腾一番
+#### 下载好软件后,进行安装,方法基本和网上一样，要注意细节，不然进不了图形页面，就需要折腾一番
 
 #### 1. 禁用nouveau   
 ```angular2
